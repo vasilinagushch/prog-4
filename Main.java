@@ -17,6 +17,9 @@ public class Main {
         game.initializePhrases();
         game.startGame();
 
+        // Демонстрация использования статического метода
+        System.out.println("Общее количество игроков: " + Player.getPlayerCount());
+
         // Демонстрация использования вспомогательного класса
         ScoreHelper scoreHelper = game.getPlayerScoreHelper();
         System.out.println("Очки игрока через вспомогательный класс: " + scoreHelper.getScore());
