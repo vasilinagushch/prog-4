@@ -110,7 +110,6 @@ public class Game {
         }
     }
 
-    // Новый метод в Game.java для возврата значения через вспомогательный класс
     public ScoreHelper getPlayerScoreHelper() {
         return new ScoreHelper(player.getScore());
     }
