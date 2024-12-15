@@ -1,69 +1,11 @@
-/*#define _CRT_SECURE_NO_WARNINGS
-#include <iostream>
-#include "Puzzle.h"
-#include <cstring>
-
-int Puzzle::puzzleCount = 0; // инициализация статического поля
-
-Puzzle::Puzzle() : correctAnswerIndex(0), attempts(0) {
-    strcpy(question, "");
-    puzzleCount++;
-    std::cout << "\n" << "Счётчик создания объектов Puzzle: " << puzzleCount << std::endl; // отладочный вывод
-}
-
-Puzzle::Puzzle(const char* question, int correctAnswerIndex, const char* hintText1, const char* hintText2, const char* hintText3, const char* option1, const char* option2, const char* option3) {
-    strcpy(this->question, question);
-    this->correctAnswerIndex = correctAnswerIndex;
-    hints[0].setText(hintText1);
-    hints[1].setText(hintText2);
-    hints[2].setText(hintText3);
-    options[0].setText(option1);
-    options[1].setText(option2);
-    options[2].setText(option3);
-    attempts = 0;
-    puzzleCount++;
-    std::cout << "\nСчётчик создания объектов Puzzle: " << puzzleCount << std::endl; // Отладочный вывод
-}
-
-const char* Puzzle::getQuestion() const {
-    return question;
-}
-
-const char* Puzzle::getOption(int index) const {
-    return options[index].getText();
-}
-
-const char* Puzzle::getHint(int index) const {
-    return hints[index].getText();
-}
-
-int Puzzle::getCorrectAnswerIndex() const {
-    return correctAnswerIndex;
-}
-
-int Puzzle::getAttempts() const {
-    return attempts;
-}
-
-void Puzzle::incrementAttempts() {
-    attempts++;
-}
-
-void Puzzle::resetAttempts() {
-    attempts = 0;
-}
-
-int Puzzle::getPuzzleCount() {
-    return puzzleCount; // возвращаем количество объектов
-}*/
 #include "Puzzle.h"
 #include <iostream>
 
-int Puzzle::puzzleCount = 0; // Инициализация статического поля
+int Puzzle::puzzleCount = 0; // Г€Г­ГЁГ¶ГЁГ Г«ГЁГ§Г Г¶ГЁГї Г±ГІГ ГІГЁГ·ГҐГ±ГЄГ®ГЈГ® ГЇГ®Г«Гї
 
 Puzzle::Puzzle() : correctAnswerIndex(0), attempts(0) {
-    puzzleCount++; // Увеличиваем количество объектов при создании нового объекта
-    std::cout << "\nСчётчик создания объектов Puzzle: " << puzzleCount << std::endl; // Отладочный вывод
+    puzzleCount++; // Г“ГўГҐГ«ГЁГ·ГЁГўГ ГҐГ¬ ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® Г®ГЎГєГҐГЄГІГ®Гў ГЇГ°ГЁ Г±Г®Г§Г¤Г Г­ГЁГЁ Г­Г®ГўГ®ГЈГ® Г®ГЎГєГҐГЄГІГ 
+    std::cout << "\nГ‘Г·ВёГІГ·ГЁГЄ Г±Г®Г§Г¤Г Г­ГЁГї Г®ГЎГєГҐГЄГІГ®Гў Puzzle: " << puzzleCount << std::endl; // ГЋГІГ«Г Г¤Г®Г·Г­Г»Г© ГўГ»ГўГ®Г¤
 }
 
 Puzzle::Puzzle(const std::string& question, int correctAnswerIndex, const std::string& hintText1, const std::string& hintText2, const std::string& hintText3, const std::string& option1, const std::string& option2, const std::string& option3)
@@ -74,8 +16,8 @@ Puzzle::Puzzle(const std::string& question, int correctAnswerIndex, const std::s
     options[0].setText(option1);
     options[1].setText(option2);
     options[2].setText(option3);
-    puzzleCount++; // Увеличиваем количество объектов при создании нового объекта
-    std::cout << "\nСчётчик создания объектов Puzzle: " << puzzleCount << std::endl; // Отладочный вывод
+    puzzleCount++; // Г“ГўГҐГ«ГЁГ·ГЁГўГ ГҐГ¬ ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® Г®ГЎГєГҐГЄГІГ®Гў ГЇГ°ГЁ Г±Г®Г§Г¤Г Г­ГЁГЁ Г­Г®ГўГ®ГЈГ® Г®ГЎГєГҐГЄГІГ 
+    std::cout << "\nГ‘Г·ВёГІГ·ГЁГЄ Г±Г®Г§Г¤Г Г­ГЁГї Г®ГЎГєГҐГЄГІГ®Гў Puzzle: " << puzzleCount << std::endl; // ГЋГІГ«Г Г¤Г®Г·Г­Г»Г© ГўГ»ГўГ®Г¤
 }
 
 const std::string& Puzzle::getQuestion() const {
@@ -107,45 +49,45 @@ void Puzzle::resetAttempts() {
 }
 
 int Puzzle::getPuzzleCount() {
-    return puzzleCount; // Возвращаем количество объектов
+    return puzzleCount; // Г‚Г®Г§ГўГ°Г Г№Г ГҐГ¬ ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® Г®ГЎГєГҐГЄГІГ®Гў
 }
 
-// Возврат значения через указатель
+// Г‚Г®Г§ГўГ°Г ГІ Г§Г­Г Г·ГҐГ­ГЁГї Г·ГҐГ°ГҐГ§ ГіГЄГ Г§Г ГІГҐГ«Гј
 const std::string* Puzzle::getQuestionPtr() const {
     return &question;
 }
 
-// Возврат значения через ссылку
+// Г‚Г®Г§ГўГ°Г ГІ Г§Г­Г Г·ГҐГ­ГЁГї Г·ГҐГ°ГҐГ§ Г±Г±Г»Г«ГЄГі
 const std::string& Puzzle::getQuestionRef() const {
     return question;
 }
 
-// Использование оператора this
+// Г€Г±ГЇГ®Г«ГјГ§Г®ГўГ Г­ГЁГҐ Г®ГЇГҐГ°Г ГІГ®Г°Г  this
 Puzzle& Puzzle::setQuestion(const std::string& newQuestion) {
     this->question = newQuestion;
     return *this;
 }
 
-// Дружественная функция
+// Г„Г°ГіГ¦ГҐГ±ГІГўГҐГ­Г­Г Гї ГґГіГ­ГЄГ¶ГЁГї
 std::ostream& operator<<(std::ostream& os, const Puzzle& puzzle) {
-    os << "Загадка(дружественная функция): " << puzzle.getQuestion() << "\n";
+    os << "Г‡Г ГЈГ Г¤ГЄГ (Г¤Г°ГіГ¦ГҐГ±ГІГўГҐГ­Г­Г Гї ГґГіГ­ГЄГ¶ГЁГї): " << puzzle.getQuestion() << "\n";
     return os;
 }
 
-// Перегрузка оператора +
+// ГЏГҐГ°ГҐГЈГ°ГіГ§ГЄГ  Г®ГЇГҐГ°Г ГІГ®Г°Г  +
 Puzzle Puzzle::operator+(const Puzzle& other) const {
     Puzzle newPuzzle;
     newPuzzle.question = this->question + " " + other.question;
     return newPuzzle;
 }
 
-// Перегрузка оператора ++ (префиксный)
+// ГЏГҐГ°ГҐГЈГ°ГіГ§ГЄГ  Г®ГЇГҐГ°Г ГІГ®Г°Г  ++ (ГЇГ°ГҐГґГЁГЄГ±Г­Г»Г©)
 Puzzle& Puzzle::operator++() {
     ++attempts;
     return *this;
 }
 
-// Перегрузка оператора ++ (постфиксный)
+// ГЏГҐГ°ГҐГЈГ°ГіГ§ГЄГ  Г®ГЇГҐГ°Г ГІГ®Г°Г  ++ (ГЇГ®Г±ГІГґГЁГЄГ±Г­Г»Г©)
 Puzzle Puzzle::operator++(int) {
     Puzzle temp = *this;
     attempts++;
